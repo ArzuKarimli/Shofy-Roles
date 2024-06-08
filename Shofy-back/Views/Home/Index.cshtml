@@ -1,0 +1,1644 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<main>
+    <section id="sidebar-area">
+        <div class="sidebar move-sidebar">
+            <div class="sidebar-title">
+                <h4>Shopping cart</h4>
+                <div class="close-btn"> <i class="fa-solid fa-x"></i></div>
+            </div>
+            <hr>
+            <hr>
+            <div class="full-basket">
+                <div class="subtotal">
+                    <div class="total-price">
+                        <p>Subtotal:</p>
+                        <span data-id="">140</span>3
+                        4
+                    </div>
+                    <div class="checkout-btn">
+                        <a href="./cart.html" class="view-cart">View Cart</a>
+                        <a href="#" class="checkout">Checkout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="empty-basket d-none">
+                <div class="empty-cart">
+                    <img src="~/assets/images/empty-cart.png" alt="">
+                </div>
+                <p>Your Cart is empty</p>
+                <a href="./shop.html">
+                    <button class="shop-btn">Go To Shop</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="slider">
+        <div class="slider-box  slider-box1 active">
+            <div class="back-images">
+                <div class="back-image1">
+                    <img src="~/assets/images/slider-shape-1.png">
+                </div>
+                <div class="back-image2">
+                    <img src="~/assets/images/slider-shape-3.png" alt="">
+                </div>
+                <div class="back-image3">
+                    <img src="~/assets/images/slider-shape-4.png" alt="">
+                </div>
+            </div>
+            <div class="slider-images">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="slider-text">
+                                <span>Starting at <b>274</b></span>
+                                <h3 class="slider-title">The best tablet Collection 2023</h3>
+                                <p class="exclusive">
+                                    Exclusive offer <span class="slider-content">
+                                        -35% <img src="~/assets/images/line-slider.svg" alt="">
+                                    </span> off this week
+                                </p>
+                            </div>
+                            <div class="slider-btn">
+                                <button>
+                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="slider-right-img"><img src="~/assets/images/slider-img-1.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-box slider-box2 ">
+            <div class="back-images">
+                <div class="back-image1">
+                    <img src="~/assets/images/slider-shape-1.png">
+                </div>
+                <div class="back-image2">
+                    <img src="~/assets/images/slider-shape-3.png" alt="">
+                </div>
+                <div class="back-image3">
+                    <img src="~/assets/images/slider-shape-4.png" alt="">
+                </div>
+            </div>
+            <div class="slider-images">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="slider-text">
+                                <span>Starting at <b>274</b></span>
+                                <h3 class="slider-title">The best tablet Collection 2023</h3>
+                                <p class="exclusive">
+                                    Exclusive offer <span class="slider-content">
+                                        -35% <img src="~/assets/images/line-slider.svg" alt="">
+                                    </span> off this week
+                                </p>
+                            </div>
+                            <div class="slider-btn">
+                                <button>
+                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="slider-right-img"><img src="~/assets/images/slider-img-2.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-box slider-box3">
+            <div class="back-images">
+                <div class="back-image1">
+                    <img src="~/assets/images/slider-shape-1.png">
+                </div>
+                <div class="back-image2">
+                    <img src="~/assets/images/slider-shape-3.png" alt="">
+                </div>
+                <div class="back-image3">
+                    <img src="~/assets/images/slider-shape-4.png" alt="">
+                </div>
+            </div>
+            <div class="slider-images">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="slider-text">
+                                <span>Starting at <b>274</b></span>
+                                <h3 class="slider-title">The best tablet Collection 2023</h3>
+                                <p class="exclusive">
+                                    Exclusive offer <span class="slider-content">
+                                        -35% <img src="~/assets/images/line-slider.svg" alt="">
+                                    </span> off this week
+                                </p>
+                            </div>
+                            <div class="slider-btn">
+                                <button>
+                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="slider-right-img"><img src="~/assets/images/slider-img-3.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dots-containerm ">
+            <span class="dotm active" onclick="currentSlide(1)"></span>
+            <span class="dotm" onclick="currentSlide(2)"></span>
+            <span class="dotm" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    <section id="products-category">
+        <div class="container">
+            <div class="products">
+               @foreach (var item in Model.Categories)
+                {
+                     <div class="product-box">
+                    <div class="product-image"><img src="~/assets/images/@item.Image" alt=""></div>
+                    <div class="product-content">
+                        <h5>@item.Name</h5>
+                        <span>3 Product</span>
+                    </div>
+                </div>
+                }      
+               
+            </div>
+        </div>
+    </section>
+    <section id="feature-area">
+        <div class="feature">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="feature-box">
+                            <div class="feature-box-img"><img src="~/assets/images/box-1.svg" alt=""></div>
+                            <div class="feature-content">
+                                <h3>Free Delivery</h3>
+                                <p>Orders from all item</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-box">
+                            <div class="feature-box-img"><img src="~/assets/images/box-2.svg" alt=""></div>
+                            <div class="feature-content">
+                                <h3>Return & Refund</h3>
+                                <p>Money back guarantee</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-box">
+                            <div class="feature-box-img"><img src="~/assets/images/box-3.svg" alt=""></div>
+                            <div class="feature-content">
+                                <h3>Member Discount</h3>
+                                <p>Onevery order over 140.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-box">
+                            <div class="feature-box-img"><img src="~/assets/images/box-4.svg" alt=""></div>
+                            <div class="feature-content">
+                                <h3>Support 24/7</h3>
+                                <p>Contact us 24 hours a day</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="trending-products">
+        <div class="trends">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="trending-title">
+                            <h3>Trend Ürünler <img src="~/assets/images/trending-line.svg" alt=""></h3>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <hr>
+                    </div>
+                    <div class="col-3">
+                        <div class="trending-tab">
+                            <ul>
+                                <li class="tab active">
+                                    <a href="">
+                                        Yeni <img src="~/assets/images/tab-menu-line.svg" alt="">
+                                    </a>
+                                </li>
+                                <li class="tab">
+                                    <a href="">Öne Çıkan <img src="~/assets/images/tab-menu-line.svg" alt=""></a>
+                                </li>
+                                <li class="tab">
+                                    <a href="">
+                                        En Çok Satanlar <img src="~/assets/images/tab-menu-line.svg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="trend-products tab1 active-tab">
+            <div class="container">
+                <div class="row">
+                    @foreach (var item in Model.Products)
+                    {
+                        <div class="col-3">
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Sepete Ekle</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Hızlı İncele</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>İstek Listesine Ekle</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/@item.ProductImages.FirstOrDefault(m=>m.IsMain)?.Name" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">@item.Category.Name</a>
+                                    </div>
+                                    <h3>@item.Name</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke" style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Değerlendirme)</span></div>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">120</span><span class="new-price">103.20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products-banner">
+        <div class="banners">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8">
+                        <div class="left-banner">
+                            <div class="image zoom-in">
+                                <div class="banner-text">
+                                    <span>Sale 20% of all store</span>
+                                    <h3>
+                                        Smartphone <br>
+                                        BLU G91 Pro 2022
+                                    </h3>
+                                    <button>Shop Now <img src="~/assets/images/arrow-right.svg" alt=""></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="right-banner">
+                            <div class="image zoom-in">
+                                <div class="banner-text">
+                                    <h3>
+                                        HyperX Cloud II <br>
+                                        Wireless
+                                    </h3>
+                                    <span>Sale 35% off</span>
+                                    <button>Shop Now <img src="~/assets/images/arrow-right.svg" alt=""></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="deal-day">
+        <div class="deal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="trending-title">
+                            <h3>Deal of the Day <img src="~/assets/images/trending-line.svg" alt=""></h3>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-2">
+                        <button class="deal-btn">
+                            View All Deals <img src="~/assets/images/arrow-right.svg"
+                                                alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="owl-carousel">
+                        <div>
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/headphone-5.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+                                    <ul class="product-timer">
+                                        <li>
+                                            <span></span>
+                                            <p>DAYS</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>HRS</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>MIN</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>SEC</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/cpu-5.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+                                    <ul class="product-timer">
+                                        <li>
+                                            <span>0</span>
+                                            <p>DAYS</p>
+                                        </li>
+                                        <li>
+                                            <span>0</span>
+                                            <p>HRS</p>
+                                        </li>
+                                        <li>
+                                            <span>0</span>
+                                            <p>MIN</p>
+                                        </li>
+                                        <li>
+                                            <span>0</span>
+                                            <p>SEC</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/watch-9.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+                                    <ul class="product-timer">
+                                        <li>
+                                            <span></span>
+                                            <p>DAYS</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>HRS</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>MIN</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>SEC</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/blutooth-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+                                    <ul class="product-timer">
+                                        <li>
+                                            <span></span>
+                                            <p>DAYS</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>HRS</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>MIN</p>
+                                        </li>
+                                        <li>
+                                            <span></span>
+                                            <p>SEC</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-gadget-area">
+        <div class="gadget-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="gadget-sidebar">
+                            <div class="gadget-banner">
+                                <h3>Electronics <br> Gadgets</h3>
+                                <div class="gadget-list">
+                                    <ul>
+                                        <li><a href="">Micrscope</a></li>
+                                        <li><a href="">Remote Control</a></li>
+                                        <li><a href="">Monitor</a></li>
+                                        <li><a href="">Thermometer</a></li>
+                                        <li><a href="">Backpack</a></li>
+                                        <li><a href="">Headphones</a></li>
+                                    </ul>
+                                </div>
+                                <div class="gadget-btn">
+                                    <button>
+                                        More Products <img src="~/assets/images/arrow-right.svg"
+                                                           alt=""></i>
+                                    </button>
+                                </div>
+                                <div class="gadget-image">
+                                    <img src="~/assets/images/gadget-girl.png" alt="">
+                                </div>
+
+                            </div>
+                            <div class="gadget-banner-content"
+                                 style="background-image: url('~/assets/images/gadget-banner-1.jpg');">
+                                <span>Only 99.00</span>
+                                <h3>
+                                    Selected novelty <br>
+                                    Products
+                                </h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-8">
+                        <div class="gadget-cards">
+
+
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/headphone-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/headphone-2.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/headphone-3.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="gadget-cards">
+
+
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/mobile-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/mobile-5.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="product-card" data-id="">
+                                <div class="card-top">
+                                    <div class="card-action">
+                                        <button class="card-btn basket">
+                                            <img src="~/assets/images/basket.svg" alt="">
+                                            <span>Add To Cart</span>
+                                        </button>
+                                        <button class="card-btn eye">
+                                            <img src="~/assets/images/eye.svg" alt="">
+                                            <span>Quick View</span>
+                                        </button>
+                                        <button class="card-btn heart">
+                                            <img src="~/assets/images/svg-image-5.svg" alt="">
+                                            <span>Add To Whislist</span>
+                                        </button>
+                                    </div>
+                                    <img src="~/assets/images/ipad-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Gaming Headphones</h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">130</span><span class="new-price">123.50</span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="second-slider">
+        <div class="container">
+            <div class="banners">
+                <div class="banner one active">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <span>Tablet Collection 2023</span>
+                            <h3> Galaxy Tab S6 Lite Android Tablet </h3>
+                            <span class="old-price">320.00</span>
+                            <p class="new-price">288.00</p>
+                            <button>Shop Now</button>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="banner-right">
+                                <span></span>
+                                <img src="~/assets/images/banner-slider-offer.png" alt="">
+                                <div class="banner-img">
+                                    <img src="~/assets/images/banner-slider-1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner two">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <span>Tablet Collection 2023</span>
+                            <h3> Galaxy Tab S6 Lite Android Tablet </h3>
+                            <span class="old-price">320.00</span>
+                            <p class="new-price">288.00</p>
+                            <button>Shop Now</button>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="banner-right">
+                                <span></span>
+                                <img src="~/assets/images/banner-slider-offer.png" alt="">
+                                <div class="banner-img">
+                                    <img src="~/assets/images/banner-slider-2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner three">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <span>Tablet Collection 2023</span>
+                            <h3> Galaxy Tab S6 Lite Android Tablet </h3>
+                            <span class="old-price">320.00</span>
+                            <p class="new-price">288.00</p>
+                            <button>Shop Now</button>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="banner-right">
+                                <span></span>
+                                <img src="~/assets/images/banner-slider-offer.png" alt="">
+                                <div class="banner-img">
+                                    <img src="~/assets/images/banner-slider-3.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dots-container ">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section id="arrivals-area">
+        <div class="arrival">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="trending-title">
+                            <h3>New Arrivals <img src="~/assets/images/trending-line.svg" alt=""></h3>
+                        </div>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="btns">
+                            <button class="left"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="right"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="arrival-cards">
+            <div class="container">
+                <div class="cards ">
+
+                    <div class="product-card" data-id="">
+                        <div class="card-top">
+                            <div class="card-action">
+                                <button class="card-btn basket">
+                                    <img src="~/assets/images/basket.svg" alt="">
+                                    <span>Add To Cart</span>
+                                </button>
+                                <button class="card-btn eye">
+                                    <img src="~/assets/images/eye.svg" alt="">
+                                    <span>Quick View</span>
+                                </button>
+                                <button class="card-btn heart">
+                                    <img src="~/assets/images/svg-image-5.svg" alt="">
+                                    <span>Add To Whislist</span>
+                                </button>
+                            </div>
+                            <img src="~/assets/images/watch-1.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <div class="product-category">
+                                <a href="">Headphones</a>
+                            </div>
+                            <h3>Headphones Wireless.</h3>
+                            <div class="product-rating">
+                                <div class="star-icons">
+                                    <i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke" style="color: #FFB21D;"></i>
+                                </div>
+                                <div class="rating-text"><span>(7 Review)</span></div>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">120</span><span class="new-price">103.20</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="product-card" data-id="">
+                        <div class="card-top">
+                            <div class="card-action">
+                                <button class="card-btn basket">
+                                    <img src="~/assets/images/basket.svg" alt="">
+                                    <span>Add To Cart</span>
+                                </button>
+                                <button class="card-btn eye">
+                                    <img src="~/assets/images/eye.svg" alt="">
+                                    <span>Quick View</span>
+                                </button>
+                                <button class="card-btn heart">
+                                    <img src="~/assets/images/svg-image-5.svg" alt="">
+                                    <span>Add To Whislist</span>
+                                </button>
+                            </div>
+                            <img src="~/assets/images/watch-5.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <div class="product-category">
+                                <a href="">Headphones</a>
+                            </div>
+                            <h3>Headphones Wireless.</h3>
+                            <div class="product-rating">
+                                <div class="star-icons">
+                                    <i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke" style="color: #FFB21D;"></i>
+                                </div>
+                                <div class="rating-text"><span>(7 Review)</span></div>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">120</span><span class="new-price">103.20</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="product-card" data-id="">
+                        <div class="card-top">
+                            <div class="card-action">
+                                <button class="card-btn basket">
+                                    <img src="~/assets/images/basket.svg" alt="">
+                                    <span>Add To Cart</span>
+                                </button>
+                                <button class="card-btn eye">
+                                    <img src="~/assets/images/eye.svg" alt="">
+                                    <span>Quick View</span>
+                                </button>
+                                <button class="card-btn heart">
+                                    <img src="~/assets/images/watch-9 (1).png" alt="">
+                                    <span>Add To Whislist</span>
+                                </button>
+                            </div>
+                            <img src="~/assets/images/blutooth-1.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <div class="product-category">
+                                <a href="">Headphones</a>
+                            </div>
+                            <h3>Headphones Wireless.</h3>
+                            <div class="product-rating">
+                                <div class="star-icons">
+                                    <i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke" style="color: #FFB21D;"></i>
+                                </div>
+                                <div class="rating-text"><span>(7 Review)</span></div>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">120</span><span class="new-price">103.20</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="product-card" data-id="">
+                        <div class="card-top">
+                            <div class="card-action">
+                                <button class="card-btn basket">
+                                    <img src="~/assets/images/basket.svg" alt="">
+                                    <span>Add To Cart</span>
+                                </button>
+                                <button class="card-btn eye">
+                                    <img src="~/assets/images/eye.svg" alt="">
+                                    <span>Quick View</span>
+                                </button>
+                                <button class="card-btn heart">
+                                    <img src="~/assets/images/svg-image-5.svg" alt="">
+                                    <span>Add To Whislist</span>
+                                </button>
+                            </div>
+                            <img src="~/assets/images/blutooth-4.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <div class="product-category">
+                                <a href="">Headphones</a>
+                            </div>
+                            <h3>Headphones Wireless.</h3>
+                            <div class="product-rating">
+                                <div class="star-icons">
+                                    <i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star" style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke" style="color: #FFB21D;"></i>
+                                </div>
+                                <div class="rating-text"><span>(7 Review)</span></div>
+
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">120</span><span class="new-price">103.20</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="top-products-area">
+
+        <div class="top-product">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="trending-title">
+                            <h3>Discount Products <img src="~/assets/images/trending-line.svg" alt=""></h3>
+
+                        </div>
+                        <div class="product-list">
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/headphone-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/headphone-5.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/mobile-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="trending-title">
+                            <h3>Featured Products <img src="~/assets/images/trending-line.svg" alt=""></h3>
+
+                        </div>
+                        <div class="product-list">
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/headphone-8.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/mobile-5.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/ipad-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="trending-title">
+                            <h3>Featured Products <img src="~/assets/images/trending-line.svg" alt=""></h3>
+
+                        </div>
+                        <div class="product-list">
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/headphone-5.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/headphone-1.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-product">
+                                <div class="app-img">
+                                    <img src="~/assets/images/headphone-8.png" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="product-category">
+                                        <a href="">Headphones</a>
+                                    </div>
+                                    <h3> Headphones with Mic </h3>
+                                    <div class="product-rating">
+                                        <div class="star-icons">
+                                            <i class="fa-solid fa-star"
+                                               style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                              style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                             style="color: #FFB21D;"></i><i class="fa-solid fa-star"
+                                                                                                                                            style="color: #FFB21D;"></i><i class="fa-solid fa-star-half-stroke"
+                                                                                                                                                                           style="color: #FFB21D;"></i>
+                                        </div>
+                                        <div class="rating-text"><span>(7 Review)</span></div>
+
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="old-price">140</span><span class="new-price">110</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog-area">
+        <div class="blogs-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="trending-title">
+                            <h3>
+                                Latest news & <br> articles <img src="~/assets/images/trending-line.svg" alt="">
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-2">
+                        <button class="deal-btn">
+                            View All Blog <img src="~/assets/images/arrow-right.svg"
+                                               alt="">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="blogs-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="blog-image-box">
+                            <img src="~/assets/images/blog-2.jpg" alt="">
+                            <div class="image-title">
+                                <span>18 February, 2023</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>How clothes are linked to climate</h3>
+                            <div class="blog-tag">
+                                <i class="fa-solid fa-tag"></i>
+                                <a href="#">Tablet,</a>
+                                <a href="#">News</a>
+                            </div>
+                            <p>
+                                The world is an amazing place providing an incredible assortment of interesting
+                                locations across.
+                            </p>
+                            <button class="blog-btn">
+                                Read More<img src="~/assets/images/arrow-right.svg"
+                                              alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="blog-image-box">
+                            <img src="~/assets/images/blog-3.jpg" alt="">
+                            <div class="image-title">
+                                <span>18 February, 2023</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>How clothes are linked to climate</h3>
+                            <div class="blog-tag">
+                                <i class="fa-solid fa-tag"></i>
+                                <a href="#">Tablet,</a>
+                                <a href="#">News</a>
+                            </div>
+                            <p>
+                                The world is an amazing place providing an incredible assortment of interesting
+                                locations across.
+                            </p>
+                            <button class="blog-btn">
+                                Read More<img src="~/assets/images/arrow-right.svg"
+                                              alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4">
+                        <div class="blog-image-box">
+                            <img src="~/assets/images/blog-1.jpg" alt="">
+                            <div class="image-title">
+                                <span>18 February, 2023</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>How clothes are linked to climate</h3>
+                            <div class="blog-tag">
+                                <i class="fa-solid fa-tag"></i>
+                                <a href="#">Tablet,</a>
+                                <a href="#">News</a>
+                            </div>
+                            <p>
+                                The world is an amazing place providing an incredible assortment of interesting
+                                locations across.
+                            </p>
+                            <button class="blog-btn">
+                                Read More<img src="~/assets/images/arrow-right.svg"
+                                              alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section id="instagram-area">
+        <div class="container">
+            <div class="instagram-boxes">
+                <div class="box">
+                    <img src="~/assets/images/instagram-1.jpg" alt="">
+                    <div class="common">
+                        <div class="instagram-box">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="~/assets/images/instagram-2.jpg" alt="">
+                    <div class="common">
+                        <div class="instagram-box">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="~/assets/images/instagram-3.jpg" alt="">
+                    <div class="common">
+                        <div class="instagram-box">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="~/assets/images/instagram-4.jpg" alt="">
+                    <div class="common">
+                        <div class="instagram-box">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="~/assets/images/instagram-5.jpg" alt="">
+                    <div class="common">
+                        <div class="instagram-box">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="subscribe-area">
+        <div class="subscribe">
+            <img src="~/assets/images/subscribe-shape-1.png" alt="" class="shape-1">
+            <img src="~/assets/images/subscribe-shape-2.png" alt="" class="shape-2">
+            <img src="~/assets/images/subscribe-shape-3.png" alt="" class="shape-3">
+            <img src="~/assets/images/subscribe-shape-4.png" alt="" class="shape-4">
+            <div class="subscribe-plane">
+                <img src="~/assets/images/plane.png" alt="" class="plane">
+
+                <img src="~/assets/images/Shofy - Multipurpose eCommerce Angular Template-35.svg" alt=""
+                     class="template1">
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-7">
+                        <div class="subscribe-content">
+                            <span>Sale 20% off all store</span>
+                            <h3>Subscribe our Newsletter</h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5">
+                        <div class="subscribe-input">
+                            <input type="email" placeholder="Enter Your Email">
+                            <button>Subscribe</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
